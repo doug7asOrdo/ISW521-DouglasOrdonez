@@ -22,5 +22,5 @@ Investigación sobre una tecnología web con demostración técnica en vivo. El 
 
 ## Integrantes:
 Douglas Ordoñez  
-Anthony Campos   
+Alejandro Gómez     
 Justin Castillo
