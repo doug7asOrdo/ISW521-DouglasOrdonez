@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+    <header>
+        <div class="header-inner">
+            <h1>Douglas Ordoñez Mora</h1>
+            <nav aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contenido">
+
+        <section id="sobre-mi" class="sobre-mi" aria-labelledby="titulo-sobre-mi">
+            <figure class="avatar">
+                <span aria-hidden="true">DO</span>
+                <figcaption class="skip-link">Avatar de Douglas Ordoñez, iniciales D O</figcaption>
+            </figure>
+            <div class="sobre-mi-texto">
+                <h2 id="titulo-sobre-mi">Juan Pérez</h2>
+                <p>Estudiante de Ingeniería en Software, enfocado en el curso por crear aplicaciones web accesibles y bien
+                    diseñadas.</p>
+            </div>
+        </section>
+
+        <section id="proyectos" aria-labelledby="titulo-proyectos">
+            <h2 class="titulo-seccion" id="titulo-proyectos">Mis Proyectos</h2>
+
+            <ul class="proyectos">
+                <li>
+                    <article class="proyecto" aria-labelledby="proyecto-1-titulo">
+                        <h3 id="proyecto-1-titulo">Gestor de Tareas</h3>
+                        <p>Aplicación web para crear, editar y organizar tareas diarias con recordatorios.</p>
+                        <a href="https://ejemplo.com/gestor-tareas">Ver proyecto<span class="skip-link"> Gestor de
+                                Tareas</span></a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="proyecto" aria-labelledby="proyecto-2-titulo">
+                        <h3 id="proyecto-2-titulo">Tienda en Línea</h3>
+                        <p>Sitio de comercio electrónico con catálogo de productos, carrito de compras y pago simulado.
+                        </p>
+                        <a href="https://ejemplo.com/tienda-online">Ver proyecto<span class="skip-link"> Tienda en
+                                Línea</span></a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="proyecto" aria-labelledby="proyecto-3-titulo">
+                        <h3 id="proyecto-3-titulo">Blog Personal</h3>
+                        <p>Blog responsivo con sistema de comentarios y categorías para compartir artículos.</p>
+                        <a href="https://ejemplo.com/blog-personal">Ver proyecto<span class="skip-link"> Blog
+                                Personal</span></a>
+                    </article>
+                </li>
+
+                <li>
+                    <article class="proyecto" aria-labelledby="proyecto-4-titulo">
+                        <h3 id="proyecto-4-titulo">Clima en Tiempo Real</h3>
+                        <p>Aplicación que consume una API del clima para mostrar pronósticos por ciudad.</p>
+                        <a href="https://ejemplo.com/app-clima">Ver proyecto<span class="skip-link"> Clima en Tiempo
+                                Real</span></a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer id="contacto">
+        <address>Contacto: <a href="mailto:douglasom071011@gmail.com">douglasom071011@gmail.com</a></address>
+    </footer>
+
+</body>
+
+</html>
