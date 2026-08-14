@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Técnica 3 — Mobile-First</title>
+  <link rel="stylesheet" href="mobilefirst.css">
+</head>
+<body>
+
+  <header class="page-header">
+    <div class="header-inner">
+      <span class="badge">Técnica 3 / 7</span>
+      <h1>Estrategia Mobile-First</h1>
+      <p class="subtitle">Escribe estilos base para el contexto más pequeño y escala hacia arriba</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="concept-card">
+      <h2>¿Qué significa mobile-first?</h2>
+      <p>
+        Mobile-first es una estrategia donde los estilos CSS base se escriben para
+        pantallas pequeñas, y se usan media queries con <code>min-width</code> para
+        agregar estilos conforme el viewport crece. Es lo contrario al enfoque
+        desktop-first, que usa <code>max-width</code> para quitar estilos.
+      </p>
+    </section>
+
+    <section class="compare-section">
+      <h2>Desktop-first vs Mobile-first</h2>
+      <div class="compare-grid">
+
+        <div class="compare-card compare-card--bad">
+          <div class="compare-header compare-header--bad">
+            <span class="compare-icon">✗</span>
+            Desktop-first (menos eficiente)
+          </div>
+          <pre class="code-block"><code>/* Base: escritorio (pesado) */
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Sobrescribe hacia abajo */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* deshace flex */
+    flex-direction: column;
+  }
+}</code></pre>
+          <div class="compare-note">
+            El móvil descarga los estilos de escritorio y luego los deshace.
+          </div>
+        </div>
+
+        <div class="compare-card compare-card--good">
+          <div class="compare-header compare-header--good">
+            <span class="compare-icon">✓</span>
+            Mobile-first (recomendado)
+          </div>
+          <pre class="code-block"><code>/* Base: móvil (ligero) */
+.nav {
+  display: none;
+}
+
+/* Agrega hacia arriba */
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .nav { gap: 3rem; }
+}</code></pre>
+          <div class="compare-note compare-note--good">
+            El móvil solo carga lo que necesita. El escritorio recibe capas adicionales.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="demo-section">
+      <h2>Demo: componente mobile-first</h2>
+      <p class="section-hint">Redimensiona la ventana para ver cómo este nav evoluciona desde móvil.</p>
+
+      <nav class="demo-nav">
+        <div class="nav-brand">MiSitio</div>
+        <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+        <ul class="nav-links">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Portafolio</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="viewport-indicator">
+        <div class="vi-item vi-item--mobile">
+          <span class="vi-icon">📱</span>
+          <div>
+            <strong>Móvil</strong>
+            <code>base — nav oculto, botón hamburguesa</code>
+          </div>
+        </div>
+        <div class="vi-item vi-item--tablet">
+          <span class="vi-icon">📟</span>
+          <div>
+            <strong>Tablet+</strong>
+            <code>@media (min-width: 768px) — nav en fila</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="layers-section">
+      <h2>Capas de estilos mobile-first</h2>
+      <div class="layers">
+        <div class="layer layer-1">
+          <span class="layer-label">Base (sin media query)</span>
+          <span class="layer-desc">Layout de columna única, tipografía base, colores</span>
+        </div>
+        <div class="layer-arrow">↓ min-width: 640px</div>
+        <div class="layer layer-2">
+          <span class="layer-label">Tablet pequeña</span>
+          <span class="layer-desc">Grid de 2 columnas, sidebar visible</span>
+        </div>
+        <div class="layer-arrow">↓ min-width: 1024px</div>
+        <div class="layer layer-3">
+          <span class="layer-label">Escritorio</span>
+          <span class="layer-desc">Grid de 3 columnas, nav horizontal, tipografía mayor</span>
+        </div>
+        <div class="layer-arrow">↓ min-width: 1280px</div>
+        <div class="layer layer-4">
+          <span class="layer-label">Escritorio amplio</span>
+          <span class="layer-desc">Máx-ancho centrado, espaciado generoso</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <p>ISW-521 · Programación en Ambiente Web I · UTN</p>
+  </footer>
+
+</body>
+</html>
