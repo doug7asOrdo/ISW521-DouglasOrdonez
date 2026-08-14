@@ -14,3 +14,11 @@ Esta carpeta contiene los apuntes, ejemplos y recursos de cada sesión de clase.
 - Clase 01
 - Clase 02
 - Clase 03
+- Clase 04
+- Clase 05
+- Clase 08
+- Clase 09
+- Clase 10
+- Clase 11
+- Clase 20
+- Clase23
